@@ -18,8 +18,18 @@
             color: #fff;
             padding: 20px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
+        #ieee-logo {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+		h1 {
+            color: #000000; /* Change the color to your desired color (e.g., orange) */
+        }
         section {
             max-width: 800px;
             margin: 20px auto;
@@ -28,7 +38,8 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        h1, h2, h3 {
+        
+		h2, h3 {
             color: #4285f4;
         }
 
@@ -40,12 +51,31 @@
         a:hover {
             text-decoration: underline;
         }
-
+		
         img {
-            max-width: 100%;
+            max-width: 25%;
             height: auto;
         }
+		
+		section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
+        .image-pair {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .image-caption {
+            text-align: center;
+            margin-top: 5px;
+        }
+		
         .important-dates {
             margin-top: 20px;
         }
@@ -53,7 +83,10 @@
         .organizers {
             margin-top: 20px;
         }
-
+		.organizer-photo {
+            max-width: 100px;
+        }
+		
         .sponsor-logos {
             display: flex;
             justify-content: space-around;
@@ -68,33 +101,76 @@
 </head>
 <body>
     <header>
+        <img id="ieee-logo" src="organizer/logo-ieee.svg" alt="IEEE Logo">
         <h1>Novel View Synthesis Competition</h1>
     </header>
 
     <section>
         <h2>Description</h2>
         <p>
-            Welcome to the Novel View Synthesis Competition! This competition challenges participants to generate novel views of scenes using advanced computer vision techniques.
+            Welcome to the Novel View Synthesis Competition! 
+        </p>			
+		<p>
+			View synthesis is a task of generating novel views of a scene/object from a given set of input views. 
+			It is a challenging and important problem in computer vision and graphics, with significant applications in virtual and augmented reality, 3D reconstruction, video editing, and more. 
+			Particularly, this competition is focused on two challenging conditions: (1) only one single reference view is avialble, and 
+			(2) a large view change is requested. 
+			We hope this competition can bring researchers together to explore and advance the state-of-the-art algorithms such as neural rendering and large generative models, producing <b>high quality</b> views at <b>high efficiency</b>.
+
         </p>
         <p>
-            Below are some sample images to give you an idea of the task:
+            Below are some sample image pairs to give you an idea of the task:
         </p>
-        <img src="sample-image1.jpg" alt="Sample Image 1">
-        <img src="sample-image2.jpg" alt="Sample Image 2">
+		<div class="image-pair">
+            <div class="image-caption">Given view<br>Face</div>
+            <img src="samples/face_v1.png" alt="Given View Human Face">
+            <div class="image-caption">Synthesized view<br>Face</div>
+            <img src="samples/face_v2.png" alt="Synthesized View Human Face">
+        </div>
+		<div class="image-pair">
+            <div class="image-caption">Given view<br>Fashion</div>
+            <img src="samples/shoe_v1.png" alt="Given View Fashion">
+            <div class="image-caption">Synthesized view<br>Fashion</div>
+            <img src="samples/shoe_v2.png" alt="Synthesized View Fashion">
+        </div>
+		<div class="image-pair">
+            <div class="image-caption">Given view<br>Human</div>
+            <img src="samples/human_v1.png" alt="Given View Human">
+            <div class="image-caption">Synthesized view<br>Human</div>
+            <img src="samples/human_v2.png" alt="Synthesized View Human">
+        </div>
+		<div class="image-pair">
+            <div class="image-caption">Given view<br>Fine Art</div>
+            <img src="samples/fineart_v1.png" alt="Given View Fine Art">
+            <div class="image-caption">Synthesized view<br>Fine Art</div>
+            <img src="samples/fineart_v2.png" alt="Synthesized View Fine Art">
+        </div>
+		<div class="image-pair">
+            <div class="image-caption">Given view<br>CAD</div>
+            <img src="samples/lighted_sofa_v1.png" alt="Given View CAD">
+            <div class="image-caption">Synthesized view<br>CAD</div>
+            <img src="samples/lighted_sofa_v2.png" alt="Synthesized View CAD">
+        </div>
+		
     </section>
 
     <section>
         <h2>Rules</h2>
         <p>
-            Before participating, please make sure to read the <a href="external-competition-website" target="_blank">competition rules</a> thoroughly.
+            We host the competition on <a href="https://codalab.lisn.upsaclay.fr/">CodaLab</a>. 
+			Deatil rules can be found at <a href="external-competition-website" target="_blank">competition rules</a>. 
         </p>
     </section>
 
     <section class="important-dates">
         <h2>Important Dates</h2>
         <ul>
-            <li>Submission Deadline: MM/DD/YYYY</li>
-            <li>Results Announcement: MM/DD/YYYY</li>
+			<li>Data Available: 01/26/2024</li>
+            <li>Qualification Deadline: 02/23/2024</li>
+			<li>Final Competition Deadline: 03/01/2024</li>
+			<li>Report and Code Verification: 03/06/2024</li>
+            <li>Winner Announcement: 03/13/2024</li>
+			<li>Winner(s) submit 2-pager papers to ICIP: 03/27/2024</li>
         </ul>
     </section>
 
@@ -102,15 +178,27 @@
         <h2>Organizers</h2>
         <p>
             For any inquiries, please contact the organizers:<br>
-            Email: organizers@example.com
+			<a href="https://www.linkedin.com/in/k-c-lien-546746a/" target="_blank">
+				<img class="organizer-photo" src="organizer/Lien.jpg" alt="Lien">
+			</a>
+			<a href="https://sites.google.com/view/chungchitsai" target="_blank">
+				<img class="organizer-photo" src="organizer/Tsai.jpg" alt="Tsai">
+			</a>
+			<a href="https://www.ee.nthu.edu.tw/cwlin/" target="_blank">
+				<img class="organizer-photo" src="organizer/Lin.jpg" alt="Lin">
+			</a>
+			<a href="https://cchsu.info/wordpress/" target="_blank">
+				<img class="organizer-photo" src="organizer/Hsu.png" alt="Hsu">
+			</a>
         </p>
     </section>
-
+	<!--
     <section class="sponsor-logos">
         <h2>Sponsors</h2>
         <img class="sponsor-logo" src="sponsor-logo1.png" alt="Sponsor Logo 1">
         <img class="sponsor-logo" src="sponsor-logo2.png" alt="Sponsor Logo 2">
         <!-- Add more sponsor logos as needed -->
     </section>
+	-->
 </body>
 </html>
